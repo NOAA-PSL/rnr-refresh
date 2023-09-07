@@ -20,14 +20,14 @@ def main():
     # Set up command-line parser
     cmdparser = argparse.ArgumentParser()
     cmdparser.add_argument("configpath",
-                            help="Path to configuration file (.cfg); defaults to using Templates/default.cfg",
+                            help="Path to configuration file (.cfg); defaults to using config/default.cfg",
                             nargs='?',
-                            default="Templates/default.cfg")
+                            default="config/default.cfg")
     args = cmdparser.parse_args()
-    if args.configpath == "Templates/default.cfg":
+    if args.configpath == "config/default.cfg":
         log_it("No configuration file was selected; using " + args.configpath)
     
-    log_it("=====\n Pipeline started\n")
+    log_it("=====\n Run started\n")
     
     # Genreal-purpose dictionary that gets passed everywhere
     hotpotato = {}
@@ -47,15 +47,12 @@ def main():
         hotpotato = temp.main(hotpotato)
         print(hotpotato)
     # Exit cleanly
-    log_it("\n Pipeline tasks completed \n=====")
+    log_it("\n Current run tasks completed \n=====")
     sys.exit()
     
     #===============================
     # Optional Steps
-    #  Timer class
-    #  Check dependencies
     #  Basic error checking of config
-    #  Error checking of methods
     #===============================
 
 
