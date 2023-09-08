@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-
 import argparse
 import importlib
 import readconfig as cfg
@@ -12,7 +11,7 @@ from writelog import *
 true_values = ['True', 'true', 'TRUE', 'T', 't']
 false_values = ['False', 'false', 'FALSE', 'F', 'f']
 
-# Execution of pipeline happens here
+# Execution happens here
 def main():
     # Start logging
     #start_log()
