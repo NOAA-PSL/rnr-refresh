@@ -1,0 +1,10 @@
+#!Jinja2
+
+[scheduler]
+    [[events]]
+        mail events = stall, abort
+    [[mail]]
+        to = {{environ['USER']}}@noaa.gov
+#    [[run hosts]]
+#        
+
