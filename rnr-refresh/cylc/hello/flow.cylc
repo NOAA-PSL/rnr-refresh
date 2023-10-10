@@ -1,0 +1,13 @@
+
+[scheduling]
+    cycling mode = integer
+    initial cycle point = 1
+    [[graph]]
+        P1 = """
+            hello_world
+        """
+
+[runtime]
+    [[hello_world]]
+#        script = echo 'Hello World!'
+        script = python -c 'import hello; hello.world()'
