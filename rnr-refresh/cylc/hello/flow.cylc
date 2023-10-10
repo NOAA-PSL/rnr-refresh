@@ -3,7 +3,7 @@
     cycling mode = integer
     initial cycle point = 1
     [[graph]]
-        P1 = """
+        R1 = """
             hello_world
         """
 
