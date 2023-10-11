@@ -1,0 +1,23 @@
+# This is a Cylc workflow file created for testing
+# # For more info on Cylc 8 workflow files, see https://cylc.github.io/cylc-doc/latest/html/tutorial/scheduling/graphing.html
+
+[scheduler]
+    allow implicit tasks = True
+
+[scheduling]
+    cycling mode = integer
+    initial cycle point = 1
+    [[graph]]
+#        R1 = """
+        P1 = """
+            a & c => b => d & f
+            f[-P1] => c
+        """
+        P2 = """
+            d => e
+            d[-P1] => a
+        """
+        2/P2 = """
+            e[-P1] => a
+        """
+
