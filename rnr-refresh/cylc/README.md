@@ -38,6 +38,9 @@ Instead, it is intended as a starting point for navigating switching to Cylc 8 c
 
 
 ## How `rnr-refresh` Is Configured With Cylc 8
+One of the major pitfalls of UFS-RNR was the large numbers of configuration files (YAML, Cylc, and otherwise) that had to be navigated in order to understand what was
+happening, even for basic parts of the workflow.  With `rnr-refresh`, we are aiming to leverage Cylc 8 ability to reduce the number of configurations.  For more on this
+in the Cylc docs, see [Consolidating Configurations](https://cylc.github.io/cylc-doc/latest/html/tutorial/runtime/configuration-consolidation/index.html#tutorial-cylc-consolidating-configuration).
 
 ### Global Configuration
 [Global Configuration](https://cylc.github.io/cylc-doc/latest/html/reference/config/global.html#global-configuration)
