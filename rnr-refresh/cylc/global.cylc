@@ -1,10 +1,47 @@
 #!Jinja2
 
 [scheduler]
+    UTC mode = True
     [[events]]
         mail events = stall, abort
     [[mail]]
         to = {{environ['USER']}}@noaa.gov
+        task event batch interval = PT1M
+
 #    [[run hosts]]
 #        
+
+# These platforms can be overwritten by a user's definition; for more info, see:
+# https://cylc.github.io/cylc-doc/latest/html/reference/config/global.html#global.cylc[platforms][%3Cplatform%20name%3E]
+[platforms]
+    [[container-dev]]
+        hosts = localhost
+        job runner = at
+        install target = localhost
+        [[[meta]]]
+            description = "Docker container for dev/test running on AWS with no modules or slurm"
+    [[aws0]]
+        hosts = localhost
+        job runner = slurm
+        install target = localhost
+        [[[meta]]]
+            description = "This is a development platform on NOAA RDHPCS Cloud Parallel Works AWS"
+    # This might need some work, as it is based on a remote cluster idea in the docs here:
+    # https://cylc.github.io/cylc-doc/stable/html/reference/config/writing-platform-configs.html#cluster-with-multiple-login-nodes
+    [[hera0]]
+        hosts = hfe01, hfe02, hfe03, hfe04, hfe05, hfe06, hfe07, hfe08, hfe09, hfe08, hfe09, hfe10, hfe11, hfe12
+        job runner = slurm
+        retrieve job logs = True
+        [[[meta]]]
+            description = "Hera configuration as a remote cluster with multiple login nodes"
+#    [[azure0]]
+#        #TODO
+
+
+
+# TESTING: This is for testing purposes for now, and should be removed or commented out for real runs of any experiments.
+#  No promises are made about this actually working!
+#[runtime]
+#    [[launch]]
+#        platform = aws0
 
