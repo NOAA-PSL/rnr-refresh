@@ -34,8 +34,12 @@
         retrieve job logs = True
         [[[meta]]]
             description = "Hera configuration as a remote cluster with multiple login nodes"
-#    [[azure0]]
-#        #TODO
+    [[azure0]]
+        hosts = localhost
+        job runner = slurm
+        install target = localhost
+        [[[meta]]]
+            description = "This is a testing cluster on NOAA RDHPCS Cloud Parallel Works Azure"
 
 
 
