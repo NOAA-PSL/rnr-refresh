@@ -1,6 +1,7 @@
 # Custom ignores
 rnr-refresh/log
 *.swp
+imgs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
