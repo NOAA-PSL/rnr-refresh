@@ -31,7 +31,9 @@ Instead, it is intended as a starting point for navigating switching to Cylc 8 c
 * **Monitoring** has changed entirely (i.e. there is no `cylc monitor` command) and has new [Cylc UIs](https://cylc.github.io/cylc-doc/8.0.0/html/7-to-8/major-changes/ui.html).
      There is now a terminal user interface (`cylc tui <workflow_name>`) and a GUI.
 * **Platforms** are a new feature which replace the task job and remote configuration sections
-   * Platforms now have their own configuration files
+   * Platforms now have their own configurations that can be set up in the `global.cylc` file
+      * Platform groups can be set up with shared configuration settings, as well as specifying specific differences between each
+      * 
    * ...
 * **Tasks** have also been overhauled:
    * ...
@@ -55,6 +57,9 @@ in the Cylc docs, see [Consolidating Configurations](https://cylc.github.io/cylc
 ### Workflow Configurations
 [Workflow Configuration](https://cylc.github.io/cylc-doc/latest/html/reference/config/workflow.html#workflow-configuration)
 
+#### Graphs
+* [Scheduling](https://cylc.github.io/cylc-doc/stable/html/reference/config/workflow.html#flow.cylc[scheduling][graph])
+* 
 
 ### Task Configurations
 [Task Configuration](https://cylc.github.io/cylc-doc/latest/html/user-guide/writing-workflows/runtime.html)
