@@ -1,11 +1,17 @@
 #!Jinja2
 
+{% set TEST_USER = "Peter.Vaillancourt" %}
+
 [scheduler]
     UTC mode = True
     [[events]]
         mail events = stall, abort
     [[mail]]
+{% if CYLC_WORKFLOW_OWNER is defined and CYLC_WORKFLOW_OWNER|length %}
         to = {{environ['USER']}}@noaa.gov
+{% else %}
+        to = {{ TEST_USER }}@noaa.gov
+{% endif %}
         task event batch interval = PT1M
 
 #    [[run hosts]]

@@ -1,0 +1,30 @@
+#!Jinja2
+
+[meta]
+    config type = workflow
+    description = "This is the most basic workflow that tests the software to ensure it works for a fresh install, new user, and/or sanity check.  Use anytime."
+    title = "Basic Test"
+[scheduling]
+    cycling mode = integer
+    initial cycle point = 1
+    final cycle point = 2
+    [[graph]]
+        R1 = """
+            launch
+            #launch => shutdown
+        """
+
+[runtime]
+    [[launch]]
+        # Platform should probably specified dynamically, this is just to test
+        platform = container-dev
+        script = cylc message -- "${CYLC_WORKFLOW_ID}" "${CYLC_TASK_JOB}" \
+            "Hello from ${CYLC_TASK_ID}"
+        script = python -c 'import launch; launch.init()'
+
+# Example
+#        # job requires 500MB of RAM & 4 CPUs
+#        [[[directives]]]
+#            --mem = 500
+#            --ntasks = 4
+
